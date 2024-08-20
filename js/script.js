@@ -10,7 +10,7 @@ for (let i = 0; i < (numBlocks * numBlocks); i++) {
     div.classList.add("section");
     div.style.width = `${100/numBlocks}%`
     div.style.height = `${100/numBlocks}%`
-    div.textContent = `${i}`;
+    div.textContent = " ";
 
     container.appendChild(div)
   }
