@@ -18,8 +18,16 @@ function setUp (numBlocks) {
 
       for (let e = 0; e < (numBlocks * numBlocks); e++) {
         const uniqueSection = document.querySelector(`#S${e}`);
+        uniqueSection.opacity = 0;
         uniqueSection.addEventListener('mouseover',(event) => {
-        uniqueSection.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+        uniqueSection.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, 
+                                                ${Math.floor(Math.random() * 256)}, 
+                                                ${Math.floor(Math.random() * 256)})`;
+        if (uniqueSection.style.opacity >= 1) {
+            uniqueSection.style.opacity = 1;
+        } else {
+            uniqueSection.style.opacity = `${uniqueSection.opacity += 0.1}`;
+        }
     })};
 };
 
@@ -37,11 +45,11 @@ btn.addEventListener("click", () => {
     let blocks = prompt("Number of squares per side:", "");
     blocks = Number(blocks);
     if (blocks > 100) {
-        alert("Too big. Please choose a number between 2 and 100.")
+        alert("Too big. Please choose a number between 2 and 100.");
     } else {
         clear();
         setUp(blocks);
     }
 });
 
-setUp(startNumBlocks)
+setUp(startNumBlocks);
