@@ -19,7 +19,7 @@ function setUp (numBlocks) {
       for (let e = 0; e < (numBlocks * numBlocks); e++) {
         const uniqueSection = document.querySelector(`#S${e}`);
         uniqueSection.addEventListener('mouseover',(event) => {
-        uniqueSection.style.backgroundColor = "blue";
+        uniqueSection.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
     })};
 };
 
